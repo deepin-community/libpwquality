@@ -1,3 +1,37 @@
+libpwquality (1.4.5-3) unstable; urgency=medium
+
+  * Use setuptools instead of distutils
+    distutils is removed from Python 3.12+.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 21 Jan 2024 12:21:40 +0100
+
+libpwquality (1.4.5-2) unstable; urgency=medium
+
+  [ Amin Bandali ]
+  * Change debian-branch from debian/master to debian/latest
+
+  [ Michael Biebl ]
+  * Simplify debian/rules a bit by using execute_after
+  * Use DEB_PYTHON_INSTALL_LAYOUT="deb" to get the correct sysconfig scheme on
+    Debian (Closes: #1054783)
+  * Bump Standards-Version to 4.6.2
+  * Install PAM module into /usr
+  * Do proper refcounting of the PAM module package on prerm
+    so that we don't drop the module from the PAM config when uninstalling
+    a foreign-arch package.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 20 Jan 2024 19:27:21 +0100
+
+libpwquality (1.4.5-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump debhelper from old 12 to 13
+  * Update standards version to 4.6.1, no changes needed
+  * Avoid explicitly specifying -Wl,--as-needed linker flag
+  * Set Rules-Requires-Root: no
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 15 Dec 2022 15:46:07 -0500
+
 libpwquality (1.4.4-1) unstable; urgency=medium
 
   [ Laurent Bigonville ]

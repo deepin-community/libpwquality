@@ -39,7 +39,7 @@ pwqmodule = Extension('pwquality',
 
 setup(
     name = 'pwquality',
-    version = '1.4.4',
+    version = '1.4.5',
     description = 'Python bindings for the libpwquality library for password quality checking',
     author = 'Tomáš Mráz',
     author_email = 'tm@t8m.info',
