@@ -1,3 +1,4 @@
 version=4
-https://github.com/libpwquality/libpwquality/releases \
-	.*/download/.*/@PACKAGE@@ANY_VERSION@@ARCHIVE_EXT@
+opts=searchmode=plain \
+https://api.github.com/repos/@PACKAGE@/@PACKAGE@/releases \
+https://github.com/@PACKAGE@/@PACKAGE@/releases/download/v?[a-z\d.-]+/@PACKAGE@@ANY_VERSION@@ARCHIVE_EXT@

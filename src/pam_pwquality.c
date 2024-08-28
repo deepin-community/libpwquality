@@ -34,6 +34,10 @@
 #include <security/_pam_macros.h>
 #include <security/pam_ext.h>
 
+#ifdef HAVE_PAM_CHECK_USER_IN_PASSWD
+#include <security/pam_modutil.h>
+#endif
+
 /* argument parsing */
 #define PAM_DEBUG_ARG       0x0001
 
@@ -98,6 +102,9 @@ static int
 check_local_user (pam_handle_t *pamh,
                   const char *user)
 {
+#ifdef HAVE_PAM_CHECK_USER_IN_PASSWD
+        return pam_modutil_check_user_in_passwd(pamh, user, NULL) == PAM_SUCCESS;
+#else
         struct passwd pw, *pwp;
         char buf[4096];
         int found = 0;
@@ -136,6 +143,7 @@ check_local_user (pam_handle_t *pamh,
         } else {
                 return found;
         }
+#endif
 }
 
 PAM_EXTERN int

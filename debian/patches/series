@@ -1,0 +1,2 @@
+Use-setuptools-instead-of-distutils.patch
+Makefile.am-respect-PYTHONSITEDIR.patch
